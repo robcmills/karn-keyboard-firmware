@@ -1,0 +1,5 @@
+config SHIELD_KARN_LEFT
+	def_bool $(shields_list_contains,karn_left)
+
+config SHIELD_KARN_RIGHT
+	def_bool $(shields_list_contains,karn_right)

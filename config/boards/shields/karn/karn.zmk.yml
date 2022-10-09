@@ -1,0 +1,13 @@
+file_format: "1"
+id: karn
+name: Karn
+type: shield
+url: https://github.com/robcmills/karn-keyboard/
+requires: [pro_micro]
+exposes: []
+features:
+  - keys
+  - leds
+siblings:
+  - karn_left
+  - karn_right
