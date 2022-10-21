@@ -104,10 +104,10 @@
 
         nav_layer {
             bindings = <
-            &trans   &trans     &trans     &trans   &trans      &trans   &trans   &trans  &trans    &trans
-    &trans  &ctrl_up &ctrl_down &cmd_grave &cmd_tab &trans      &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp CAPS  &trans
-            &trans   &trans     &trans     &trans   &trans      &trans   &trans   &trans  &trans    &trans
-                                &trans     &trans   &trans      &trans   &trans   &trans
+            &trans   &trans     &trans     &trans   &trans      &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(128,100,100) &trans    &trans
+    &trans  &ctrl_up &ctrl_down &cmd_grave &cmd_tab &trans      &kp LEFT        &kp DOWN        &kp UP  &kp RIGHT &kp CAPS  &trans
+            &trans   &trans     &trans     &trans   &trans      &trans          &trans          &trans  &trans    &trans
+                                &trans     &trans   &trans      &trans          &trans          &trans
             >;
         };
 
