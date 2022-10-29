@@ -13,6 +13,15 @@
 
 / {
     behaviors {
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
         mo_tog: behavior_mo_tog {
             compatible = "zmk,behavior-hold-tap";
             label = "mo_tog";
@@ -86,10 +95,10 @@
 
         default_layer {
             bindings = <
-               &kp Q        &kp W       &kp F      &kp P      &kp G      &kp J    &kp L      &kp U          &kp Y         &kp SEMI
- &mt HYPER TAB &kp A        &kp R       &kp S      &kp T      &kp D      &kp H    &kp N      &kp E          &kp I         &kp O           &mt HYPER ENTER
-               &mt LSHIFT Z &mt LCTRL X &mt LALT C &mt LCMD V &kp B      &kp K    &mt RCMD M &mt RALT COMMA &mt RCTRL DOT &mt RSHIFT FSLH
-                                        &mo 1      &kp ESC    MO_TOG(3)  &kp BSPC &kp SPC    MO_TOG(2)
+               &kp Q        &kp W       &kp F      &kp P          &kp G      &kp J    &kp L      &kp U          &kp Y         &kp SEMI
+ &ht HYPER TAB &kp A        &kp R       &kp S      &kp T          &kp D      &kp H    &kp N      &kp E          &kp I         &kp O           &ht HYPER ENTER
+               &ht LSHIFT Z &ht LCTRL X &ht LALT C &ht LCMD V     &kp B      &kp K    &ht RCMD M &ht RALT COMMA &ht RCTRL DOT &ht RSHIFT FSLH
+                                        &mo 1      &ht LSHIFT ESC MO_TOG(3)  &kp BSPC &kp SPC    MO_TOG(2)
             >;
         };
 
