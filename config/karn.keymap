@@ -13,13 +13,22 @@
 
 / {
     behaviors {
-        ht: hold_tap {
+        htt: hold_tap_tap_preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP";
+            label = "HOLD_TAP_TAP_PREFERRED";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hth: hold_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_HOLD_PREFERRED";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
         mo_tog: behavior_mo_tog {
@@ -95,10 +104,10 @@
 
         default_layer {
             bindings = <
-               &kp Q        &kp W       &kp F      &kp P          &kp G      &kp J    &kp L      &kp U          &kp Y         &kp SEMI
- &ht HYPER TAB &kp A        &kp R       &kp S      &kp T          &kp D      &kp H    &kp N      &kp E          &kp I         &kp O           &ht HYPER ENTER
-               &ht LSHIFT Z &ht LCTRL X &ht LALT C &ht LCMD V     &kp B      &kp K    &ht RCMD M &ht RALT COMMA &ht RCTRL DOT &ht RSHIFT FSLH
-                                        &mo 1      &ht LSHIFT ESC MO_TOG(3)  &kp BSPC &kp SPC    MO_TOG(2)
+                &kp Q         &kp W        &kp F       &kp P           &kp G     &kp J    &kp L       &kp U           &kp Y          &kp SEMI
+ &hth HYPER TAB &kp A         &kp R        &kp S       &kp T           &kp D     &kp H    &kp N       &kp E           &kp I          &kp O           &hth HYPER ENTER
+                &hth LSHIFT Z &htt LCTRL X &htt LALT C &htt LCMD V     &kp B     &kp K    &htt RCMD M &htt RALT COMMA &htt RCTRL DOT &hth RSHIFT FSLH
+                                           &mo SYM     &hth LSHIFT ESC &mo NUM   &kp BSPC &kp SPC     &mo NAV
             >;
         };
 
@@ -107,7 +116,7 @@
             &kp BSLH &kp GRAVE &kp SQT  &kp DQT  &kp LBRC    &kp RBRC  &kp MINUS &kp EQUAL &kp LBKT &kp RBKT
     &trans  &kp EXCL &kp AT    &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp STAR  &kp LPAR &kp RPAR &trans
             &trans   &trans    &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans
-                               &trans   &trans   &trans      &trans    &trans    &trans
+                               &trans   &trans   &trans      &kp DEL   &trans    &trans
             >;
         };
 
